@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Application à page unique : toutes les adresses (/tests, /blog/..., /program/...) renvoient vers index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
