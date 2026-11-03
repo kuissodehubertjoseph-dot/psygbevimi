@@ -1,0 +1,355 @@
+{
+ "id": "ebcdp",
+ "name": "Échelle de Besoin en Coaching et Développement Personnel",
+ "description": "Identifier les domaines où l'individu pourrait tirer bénéfice d'un accompagnement pour améliorer le bien-être général et progresser vers une vie plus épanouissante.",
+ "duration": "5-8 minutes",
+ "higherScoreIsBetter": false,
+ "showsCrisisNotice": false,
+ "questions": [
+  {
+   "id": "o1",
+   "text": "J'ai une vision claire de ce que je veux accomplir dans les 1-5 prochaines années.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "o2",
+   "text": "Mes objectifs personnels sont alignés avec mes valeurs profondes.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "o3",
+   "text": "Je sais quelles actions quotidiennes m'approchent le plus de mes objectifs.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "e1",
+   "text": "Je gère efficacement le stress quotidien sans qu'il n'ait un impact majeur sur ma vie.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "e2",
+   "text": "Je suis capable de revenir rapidement à un état émotionnel stable après une contrariété.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "e3",
+   "text": "Je prends régulièrement du temps pour recharger et prévenir l'épuisement émotionnel.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "r1",
+   "text": "J'ai des routines quotidiennes qui soutiennent ma santé physique et mentale.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "r2",
+   "text": "Je suis capable de changer facilement des habitudes nuisibles et d'en adopter de nouvelles bénéfiques.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "r3",
+   "text": "J'utilise des outils simples (planificateur, journaling, méditation) pour rester organisé et centré.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "s1",
+   "text": "J'ai un réseau de personnes fiables sur qui je peux compter.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "s2",
+   "text": "Je sais où trouver des ressources (formations, coachs, livres) pour progresser.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "s3",
+   "text": "Je demande de l'aide lorsque j'en ai besoin et je reçois un soutien utile.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "a1",
+   "text": "Je prends des décisions importantes avec confiance et clarté.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "a2",
+   "text": "Je suis capable d'analyser mes options, d'évaluer risques et bénéfices, et d'agir.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "a3",
+   "text": "Je suis prêt(e) à sortir de ma zone de confort pour atteindre mes objectifs.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "m1",
+   "text": "Je me sens suffisamment motivé(e) pour travailler régulièrement sur moi-même.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "m2",
+   "text": "Je vois des progrès concrets lorsque je m'engage dans des actions ciblées.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "m3",
+   "text": "Je suis prêt(e) à investir du temps et des ressources dans mon développement personnel.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "v1",
+   "text": "Je comprends mes forces et mes limites.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "v2",
+   "text": "Mes choix de vie reflètent mes valeurs fondamentales.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "v3",
+   "text": "Je suis curieux(se) d'apprendre et de grandir continuellement.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "res1",
+   "text": "J'arrive à m'adapter rapidement face aux changements et à rebondir après des échecs.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "res2",
+   "text": "Je transforme les défis en opportunités d'apprentissage.",
+   "scale": {
+    "min": 0,
+    "max": 4,
+    "labels": {
+     "0": "Pas du tout d'accord",
+     "1": "Peu d'accord",
+     "2": "Modérément d'accord",
+     "3": "Fortement d'accord",
+     "4": "Tout à fait d'accord"
+    }
+   }
+  }
+ ]
+}

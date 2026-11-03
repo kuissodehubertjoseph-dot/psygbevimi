@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nuit: #15173d;
+  --color-aube: #f3f1f8;
+  --color-soleil: #D98268;
+  --color-soleil-hover: #C4704F;
+  --color-savane: #12694a;
+  --color-savane-light: #4cc38a;
+  --color-brume: #5a5d7e;
+  --color-rose: #e9d5e4;
+  --color-rose-soft: rgba(233, 213, 228, 0.4);
+  --color-blanc: #ffffff;
+  --color-dark-text: #f3f1f8;
+  --color-dark-secondary: #c9c8e3;
+
+  /* Literata partout (texte et titres) */
+  --font-sans: "Literata", Georgia, serif;
+  --font-serif: var(--font-sans);
+  --font-bricolage: var(--font-sans);
+  --font-atkinson: var(--font-sans);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-atkinson);
+    font-size: 16px;
+    color: var(--color-nuit);
+    background-color: var(--color-aube);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Keyboard focus styles */
+  :focus-visible {
+    outline: 2px solid var(--color-nuit);
+    outline-offset: 2px;
+  }
+
+  .focus-dark:focus-visible,
+  [data-theme="dark"] :focus-visible,
+  .bg-nuit :focus-visible {
+    outline: 2px solid var(--color-soleil);
+    outline-offset: 2px;
+  }
+
+  /* Custom range slider styling */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: rgba(90, 93, 126, 0.25);
+    height: 8px;
+    border-radius: 999px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background: rgba(90, 93, 126, 0.25);
+    height: 8px;
+    border-radius: 999px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #D98268;
+    border: 2px solid #15173d;
+    margin-top: -10px;
+    box-shadow: 0 1px 3px rgba(21, 23, 61, 0.2);
+    transition: transform 0.15s ease;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #D98268;
+    border: 2px solid #15173d;
+    box-shadow: 0 1px 3px rgba(21, 23, 61, 0.2);
+    transition: transform 0.15s ease;
+  }
+
+  input[type="range"]:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid #15173d;
+    outline-offset: 2px;
+  }
+
+  input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+  }
+
+  /* Details and summary styling */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Indentations alternées pour la section « Vous vous reconnaissez ? » sur bureau (>= 1024px) */
+@media (min-width: 1024px) {
+  .indent-thought-0 { margin-left: 0%; }
+  .indent-thought-1 { margin-left: 12%; }
+  .indent-thought-2 { margin-left: 4%; }
+  .indent-thought-3 { margin-left: 16%; }
+  .indent-thought-4 { margin-left: 2%; }
+  .indent-thought-5 { margin-left: 10%; }
+}
+
+/* Texte des articles (Markdown) */
+.article-body > * + * { margin-top: 1.1em; }
+.article-body h1, .article-body h2, .article-body h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #15173D;
+  margin-top: 2em;
+}
+.article-body h2 { font-size: 1.6rem; }
+.article-body h3 { font-size: 1.3rem; }
+.article-body ul { list-style: disc; padding-left: 1.5rem; }
+.article-body ol { list-style: decimal; padding-left: 1.5rem; }
+.article-body li + li { margin-top: 0.4em; }
+.article-body blockquote { font-style: italic; }
+.article-body hr { border: 0; border-top: 1px solid rgba(21, 23, 61, 0.15); margin: 2em 0; }
+.article-body a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+.article-body a:hover { color: #1d4ed8; }
+.article-body strong { color: #15173D; }
+
+/* Effet de glace : verre dépoli translucide (flou de l'arrière-plan + reflet clair sur le bord haut) */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 12px 32px -14px rgba(21, 23, 61, 0.3);
+}
+.glass-dark {
+  background: rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 12px 32px -14px rgba(0, 0, 0, 0.45);
+}
+.glass-dark:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Texte d'article sur carte blanche (mise en page « couverture ») */
+.article-body--card > p:first-of-type {
+  font-size: 1.3rem;
+  line-height: 1.65;
+  color: #15173D;
+}
+.article-body--card strong {
+  font-weight: 600;
+  background: linear-gradient(transparent 62%, rgba(217, 130, 104, 0.3) 62%);
+}
+.article-body--card h2 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin-top: 2.6em;
+  padding: 0.6em 0.8em;
+  background: #f3f1f8;
+  border-radius: 14px;
+}
+.article-body--card h3 {
+  font-size: 1.4rem;
+  margin-top: 2em;
+  color: #15173D;
+}
+.article-body--card ul { list-style: none; padding-left: 0; }
+.article-body--card ul li {
+  background: #f3f1f8;
+  border-radius: 12px;
+  padding: 0.7em 1em;
+}
+.article-body--card ul li + li { margin-top: 0.6em; }
+.article-body--card blockquote {
+  background: #e9d5e4;
+  border-radius: 16px;
+  padding: 1.2em 1.4em;
+}
+
+/* Texte d'article à plat, titres en pastilles (mise en page « bandeau rose ») */
+.article-body--open > p:first-of-type {
+  font-size: 1.3rem;
+  line-height: 1.65;
+  color: #15173D;
+}
+.article-body--open strong {
+  font-weight: 600;
+  color: #15173D;
+  background: #e9d5e4;
+  border-radius: 6px;
+  padding: 0.05em 0.3em;
+}
+.article-body--open h2 {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin-top: 2.4em;
+  padding: 0.45em 1.1em;
+  background: #15173D;
+  color: #f3f1f8;
+  border-radius: 999px;
+}
+.article-body--open h3 {
+  font-size: 1.35rem;
+  margin-top: 1.8em;
+}
+.article-body--open ul li::marker { color: #d98268; }
+.article-body--open blockquote {
+  background: #f6e1d8;
+  border-radius: 16px;
+  padding: 1.2em 1.4em;
+}
+
+/* Texte d'article « magazine » : lettrine, titres surlignés, citations en grand (article « L'audace ») */
+.article-body--mag > p:first-of-type {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #15173D;
+}
+.article-body--mag > p:first-of-type::first-letter {
+  float: left;
+  font-size: 4.2rem;
+  line-height: 0.85;
+  padding: 0.08em 0.12em 0 0;
+  color: #d98268;
+}
+.article-body--mag strong { font-weight: 600; color: #15173D; }
+.article-body--mag hr { display: none; }
+.article-body--mag h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-top: 2.6em;
+  margin-bottom: 0.6em;
+}
+.article-body--mag h2 > * , .article-body--mag h2 {
+  background-image: linear-gradient(transparent 62%, #e9d5e4 62%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.article-body--mag h3 { font-size: 1.4rem; margin-top: 2em; }
+.article-body--mag ul { list-style: none; padding-left: 0; }
+.article-body--mag ul li {
+  position: relative;
+  padding-left: 2rem;
+}
+.article-body--mag ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: #d98268;
+}
+.article-body--mag blockquote {
+  position: relative;
+  margin: 2.2em 0;
+  padding: 0.4em 0 0.4em 0;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #15173D;
+}
+.article-body--mag blockquote::before {
+  content: "“";
+  display: block;
+  font-size: 4rem;
+  line-height: 0.6;
+  color: #d98268;
+}
+
+/* Titres en Literata, graisse normale (hors couche pour primer sur les classes utilitaires) */
+h1, h2, h3, h4, blockquote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+/* Section « accompagnements » et pages programme : typographie de l'ancien site (Newsreader + Figtree) */
+.old-skin {
+  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+.old-skin h1, .old-skin h2, .old-skin h3 {
+  font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
+}
+.old-skin h4, .old-skin .old-sans {
+  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+}

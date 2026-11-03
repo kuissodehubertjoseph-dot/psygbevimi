@@ -1,0 +1,610 @@
+{
+ "id": "workplace-wellness",
+ "name": "Test d'Évaluation du Bien-Être en Entreprise",
+ "description": "Évalue le niveau de bien-être et de satisfaction au travail.",
+ "duration": "10 minutes",
+ "higherScoreIsBetter": true,
+ "showsCrisisNotice": true,
+ "questions": [
+  {
+   "id": "q1",
+   "text": "Je me sens épanoui(e) dans mon travail.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q2",
+   "text": "Mon travail me procure un sentiment de satisfaction.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q3",
+   "text": "Je viens travailler avec plaisir.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q4",
+   "text": "Je me sens utile dans mon organisation.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q5",
+   "text": "Je parviens à gérer mes émotions au travail.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q6",
+   "text": "Je me sens calme pendant ma journée de travail.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q7",
+   "text": "Je me sens émotionnellement stable.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q8",
+   "text": "Je récupère facilement après une journée difficile.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q9",
+   "text": "Mon environnement de travail est agréable.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q10",
+   "text": "Je dispose des ressources nécessaires pour bien travailler.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q11",
+   "text": "Mon poste de travail est adapté à mes besoins.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q12",
+   "text": "Les conditions de sécurité sont satisfaisantes.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q13",
+   "text": "Les relations avec mes collègues sont respectueuses.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q14",
+   "text": "Je peux compter sur mes collègues lorsque j'en ai besoin.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q15",
+   "text": "Mon responsable me traite avec respect.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q16",
+   "text": "La communication au sein de mon équipe est bonne.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q17",
+   "text": "Mon supérieur me soutient.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q18",
+   "text": "Je reçois des retours constructifs.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q19",
+   "text": "Mon responsable reconnaît mes efforts.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q20",
+   "text": "Les décisions sont prises de manière équitable.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q21",
+   "text": "Mon travail est apprécié.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q22",
+   "text": "Je reçois des encouragements lorsque je fais du bon travail.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q23",
+   "text": "Mes compétences sont reconnues.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q24",
+   "text": "Je me sens valorisé(e).",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q25",
+   "text": "Je suis motivé(e) par mon travail.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q26",
+   "text": "Je donne le meilleur de moi-même.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q27",
+   "text": "Je suis prêt(e) à faire des efforts supplémentaires si nécessaire.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q28",
+   "text": "Mon travail a du sens pour moi.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q29",
+   "text": "Mon travail me laisse suffisamment de temps pour ma vie personnelle.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q30",
+   "text": "Je parviens à concilier mes responsabilités professionnelles et familiales.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q31",
+   "text": "Ma charge de travail est raisonnable.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q32",
+   "text": "Je peux me reposer suffisamment.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q33",
+   "text": "J'ai des possibilités d'apprentissage.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q34",
+   "text": "Je peux développer mes compétences.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q35",
+   "text": "Mon entreprise investit dans mon développement.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q36",
+   "text": "Je vois des perspectives d'évolution.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q37",
+   "text": "Je partage les valeurs de l'entreprise.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q38",
+   "text": "Je me sens membre à part entière de l'organisation.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q39",
+   "text": "Je recommande mon entreprise comme employeur.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  },
+  {
+   "id": "q40",
+   "text": "Je suis fier(ère) d'appartenir à cette entreprise.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Pas du tout d'accord",
+     "2": "Peu d'accord",
+     "3": "Ni d'accord ni en désaccord",
+     "4": "D'accord",
+     "5": "Tout à fait d'accord"
+    }
+   }
+  }
+ ]
+}

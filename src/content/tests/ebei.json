@@ -1,0 +1,922 @@
+{
+ "id": "ebei",
+ "name": "Échelle de Bien-Être Intérieur",
+ "description": "L’EPG-BMBD-50 est une échelle générale destinée à explorer les ressources et perceptions associées au bien-être mental, au fonctionnement psychologique positif et à la construction d’un bonheur durable.\nElle examine dix dimensions :\n    1. Bien-être émotionnel\n    2. Équilibre psychologique\n    3. Estime et confiance en soi\n    4. Résilience\n    5. Gestion du stress et des émotions\n    6. Relations positives et soutien social\n    7. Sens, valeurs et direction de vie\n    8. Autonomie et responsabilité\n    9. Accomplissement et développement personnel\n    10. Bonheur durable et satisfaction de vie",
+ "duration": "10 minutes",
+ "higherScoreIsBetter": true,
+ "showsCrisisNotice": true,
+ "questions": [
+  {
+   "id": "je-ressens-regulierement-de-la-joie-ou-de-la-satisfaction-dans-ma-vie-quotidienne",
+   "text": "Je ressens régulièrement de la joie ou de la satisfaction dans ma vie quotidienne.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-suis-capable-d-apprecier-les-petits-moments-positifs-de-ma-vie",
+   "text": "Je suis capable d’apprécier les petits moments positifs de ma vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-ressens-generalement-une-certaine-paix-interieure",
+   "text": "Je ressens généralement une certaine paix intérieure.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "meme-lorsque-ma-journee-est-difficile-je-peux-encore-trouver-des-moments-agreables",
+   "text": "Même lorsque ma journée est difficile, je peux encore trouver des moments agréables.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-sens-souvent-envahi-e-par-des-emotions-negatives-qui-m-empechent-de-profiter-de-la-vie",
+   "text": "Je me sens souvent envahi(e) par des émotions négatives qui m’empêchent de profiter de la vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-parviens-generalement-a-fonctionner-correctement-meme-lorsque-je-traverse-une-periode-difficile",
+   "text": "Je parviens généralement à fonctionner correctement même lorsque je traverse une période difficile.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-sens-relativement-en-accord-avec-moi-meme",
+   "text": "Je me sens relativement en accord avec moi-même.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-peux-prendre-du-recul-lorsque-je-rencontre-un-probleme",
+   "text": "Je peux prendre du recul lorsque je rencontre un problème.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-parviens-generalement-a-retrouver-mon-equilibre-apres-une-periode-emotionnellement-difficile",
+   "text": "Je parviens généralement à retrouver mon équilibre après une période émotionnellement difficile.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "mes-preoccupations-prennent-souvent-tellement-de-place-que-j-ai-du-mal-a-me-concentrer-sur-ma-vie-quotidienne",
+   "text": "Mes préoccupations prennent souvent tellement de place que j’ai du mal à me concentrer sur ma vie quotidienne.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-reconnais-que-j-ai-de-la-valeur-en-tant-que-personne",
+   "text": "Je reconnais que j’ai de la valeur en tant que personne.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-connais-plusieurs-qualites-que-je-possede",
+   "text": "Je connais plusieurs qualités que je possède.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-crois-que-je-peux-apprendre-et-progresser-lorsque-je-fais-des-efforts",
+   "text": "Je crois que je peux apprendre et progresser lorsque je fais des efforts.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-sens-capable-de-relever-des-defis-adaptes-a-mes-capacites",
+   "text": "Je me sens capable de relever des défis adaptés à mes capacités.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-compare-souvent-aux-autres-et-je-finis-par-penser-que-je-ne-suis-pas-a-la-hauteur",
+   "text": "Je me compare souvent aux autres et je finis par penser que je ne suis pas à la hauteur.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "apres-un-echec-je-cherche-generalement-a-comprendre-ce-que-je-peux-apprendre-de-l-experience",
+   "text": "Après un échec, je cherche généralement à comprendre ce que je peux apprendre de l’expérience.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "lorsque-je-rencontre-un-obstacle-je-cherche-des-moyens-de-continuer-a-avancer",
+   "text": "Lorsque je rencontre un obstacle, je cherche des moyens de continuer à avancer.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "les-difficultes-que-j-ai-traversees-peuvent-m-aider-a-devenir-plus-fort-e",
+   "text": "Les difficultés que j’ai traversées peuvent m’aider à devenir plus fort(e).",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-suis-capable-de-recommencer-apres-une-deception-importante",
+   "text": "Je suis capable de recommencer après une déception importante.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "lorsque-quelque-chose-va-mal-j-ai-souvent-l-impression-que-tout-est-perdu",
+   "text": "Lorsque quelque chose va mal, j’ai souvent l’impression que tout est perdu.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "lorsque-je-suis-stresse-e-je-connais-des-moyens-qui-m-aident-a-retrouver-mon-calme",
+   "text": "Lorsque je suis stressé(e), je connais des moyens qui m’aident à retrouver mon calme.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-peux-reconnaitre-ce-que-je-ressens-avant-de-reagir",
+   "text": "Je peux reconnaître ce que je ressens avant de réagir.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-peux-parler-de-mes-emotions-lorsque-cela-devient-necessaire",
+   "text": "Je peux parler de mes émotions lorsque cela devient nécessaire.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-prends-generalement-le-temps-de-reflechir-avant-de-reagir-fortement",
+   "text": "Je prends généralement le temps de réfléchir avant de réagir fortement.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "lorsque-je-suis-sous-pression-mes-emotions-controlent-souvent-completement-mes-reactions",
+   "text": "Lorsque je suis sous pression, mes émotions contrôlent souvent complètement mes réactions.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-peux-compter-sur-au-moins-une-personne-lorsque-je-traverse-une-periode-difficile",
+   "text": "Je peux compter sur au moins une personne lorsque je traverse une période difficile.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-sens-respecte-e-par-les-personnes-qui-comptent-pour-moi",
+   "text": "Je me sens respecté(e) par les personnes qui comptent pour moi.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-suis-capable-de-construire-des-relations-fondees-sur-la-confiance",
+   "text": "Je suis capable de construire des relations fondées sur la confiance.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-peux-demander-de-l-aide-lorsque-j-en-ai-reellement-besoin",
+   "text": "Je peux demander de l’aide lorsque j’en ai réellement besoin.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-me-sens-souvent-seul-e-meme-lorsque-je-suis-entoure-e-de-personnes",
+   "text": "Je me sens souvent seul(e), même lorsque je suis entouré(e) de personnes.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-sais-quelles-valeurs-sont-importantes-pour-moi",
+   "text": "Je sais quelles valeurs sont importantes pour moi.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-sais-relativement-bien-quelle-personne-je-souhaite-devenir",
+   "text": "Je sais relativement bien quelle personne je souhaite devenir.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "mes-decisions-importantes-sont-generalement-en-accord-avec-mes-valeurs",
+   "text": "Mes décisions importantes sont généralement en accord avec mes valeurs.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-sens-que-ma-vie-peut-avoir-un-sens-et-une-utilite",
+   "text": "Je sens que ma vie peut avoir un sens et une utilité.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-vis-souvent-sans-savoir-ce-qui-donne-reellement-du-sens-a-ma-vie",
+   "text": "Je vis souvent sans savoir ce qui donne réellement du sens à ma vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-prends-progressivement-la-responsabilite-de-mes-choix",
+   "text": "Je prends progressivement la responsabilité de mes choix.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-suis-capable-de-prendre-des-decisions-importantes-par-moi-meme",
+   "text": "Je suis capable de prendre des décisions importantes par moi-même.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "lorsque-je-commets-une-erreur-je-peux-reconnaitre-ma-part-de-responsabilite",
+   "text": "Lorsque je commets une erreur, je peux reconnaître ma part de responsabilité.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-cherche-a-agir-en-accord-avec-mes-convictions-et-mes-responsabilites",
+   "text": "Je cherche à agir en accord avec mes convictions et mes responsabilités.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-laisse-souvent-les-autres-decider-a-ma-place-parce-que-je-ne-me-sens-pas-capable-de-choisir",
+   "text": "Je laisse souvent les autres décider à ma place parce que je ne me sens pas capable de choisir.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "j-ai-des-objectifs-qui-donnent-une-direction-a-mes-efforts",
+   "text": "J’ai des objectifs qui donnent une direction à mes efforts.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "j-ai-le-sentiment-de-progresser-dans-certains-domaines-importants-de-ma-vie",
+   "text": "J’ai le sentiment de progresser dans certains domaines importants de ma vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-cherche-regulierement-a-apprendre-et-a-m-ameliorer",
+   "text": "Je cherche régulièrement à apprendre et à m’améliorer.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-transforme-progressivement-certaines-de-mes-idees-en-actions-concretes",
+   "text": "Je transforme progressivement certaines de mes idées en actions concrètes.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-commence-souvent-des-choses-importantes-mais-j-abandonne-avant-de-les-terminer",
+   "text": "Je commence souvent des choses importantes mais j’abandonne avant de les terminer.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": true
+  },
+  {
+   "id": "je-suis-globalement-satisfait-e-de-la-direction-que-prend-ma-vie",
+   "text": "Je suis globalement satisfait(e) de la direction que prend ma vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-sais-reconnaitre-et-apprecier-les-choses-positives-que-j-ai-deja-dans-ma-vie",
+   "text": "Je sais reconnaître et apprécier les choses positives que j’ai déjà dans ma vie.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-peux-etre-heureux-se-meme-lorsque-ma-vie-n-est-pas-parfaite",
+   "text": "Je peux être heureux(se) même lorsque ma vie n’est pas parfaite.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "je-considere-que-mon-bonheur-depend-aussi-de-la-maniere-dont-je-choisis-de-vivre-et-d-agir",
+   "text": "Je considère que mon bonheur dépend aussi de la manière dont je choisis de vivre et d’agir.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  },
+  {
+   "id": "malgre-les-difficultes-de-la-vie-je-parviens-generalement-a-trouver-des-raisons-d-avancer",
+   "text": "Malgré les difficultés de la vie, je parviens généralement à trouver des raisons d’avancer.",
+   "scale": {
+    "min": 1,
+    "max": 5,
+    "labels": {
+     "1": "Jamais",
+     "2": "Rarement",
+     "3": "Parfois",
+     "4": "Souvent",
+     "5": "Toujours"
+    }
+   },
+   "isNegative": false
+  }
+ ],
+ "dimensions": [
+  {
+   "id": "bien-etre-emotionnel",
+   "label": "Bien-être émotionnel",
+   "questionIds": [
+    "je-ressens-regulierement-de-la-joie-ou-de-la-satisfaction-dans-ma-vie-quotidienne",
+    "je-suis-capable-d-apprecier-les-petits-moments-positifs-de-ma-vie",
+    "je-ressens-generalement-une-certaine-paix-interieure",
+    "meme-lorsque-ma-journee-est-difficile-je-peux-encore-trouver-des-moments-agreables",
+    "je-me-sens-souvent-envahi-e-par-des-emotions-negatives-qui-m-empechent-de-profiter-de-la-vie"
+   ]
+  },
+  {
+   "id": "equilibre-psychologique",
+   "label": "Équilibre psychologique",
+   "questionIds": [
+    "je-parviens-generalement-a-fonctionner-correctement-meme-lorsque-je-traverse-une-periode-difficile",
+    "je-me-sens-relativement-en-accord-avec-moi-meme",
+    "je-peux-prendre-du-recul-lorsque-je-rencontre-un-probleme",
+    "je-parviens-generalement-a-retrouver-mon-equilibre-apres-une-periode-emotionnellement-difficile",
+    "mes-preoccupations-prennent-souvent-tellement-de-place-que-j-ai-du-mal-a-me-concentrer-sur-ma-vie-quotidienne"
+   ]
+  },
+  {
+   "id": "estime-confiance",
+   "label": "Estime et confiance en soi",
+   "questionIds": [
+    "je-reconnais-que-j-ai-de-la-valeur-en-tant-que-personne",
+    "je-connais-plusieurs-qualites-que-je-possede",
+    "je-crois-que-je-peux-apprendre-et-progresser-lorsque-je-fais-des-efforts",
+    "je-me-sens-capable-de-relever-des-defis-adaptes-a-mes-capacites",
+    "je-me-compare-souvent-aux-autres-et-je-finis-par-penser-que-je-ne-suis-pas-a-la-hauteur"
+   ]
+  },
+  {
+   "id": "resilience",
+   "label": "Résilience",
+   "questionIds": [
+    "apres-un-echec-je-cherche-generalement-a-comprendre-ce-que-je-peux-apprendre-de-l-experience",
+    "lorsque-je-rencontre-un-obstacle-je-cherche-des-moyens-de-continuer-a-avancer",
+    "les-difficultes-que-j-ai-traversees-peuvent-m-aider-a-devenir-plus-fort-e",
+    "je-suis-capable-de-recommencer-apres-une-deception-importante",
+    "lorsque-quelque-chose-va-mal-j-ai-souvent-l-impression-que-tout-est-perdu"
+   ]
+  },
+  {
+   "id": "gestion-stress",
+   "label": "Gestion du stress et des émotions",
+   "questionIds": [
+    "lorsque-je-suis-stresse-e-je-connais-des-moyens-qui-m-aident-a-retrouver-mon-calme",
+    "je-peux-reconnaitre-ce-que-je-ressens-avant-de-reagir",
+    "je-peux-parler-de-mes-emotions-lorsque-cela-devient-necessaire",
+    "je-prends-generalement-le-temps-de-reflechir-avant-de-reagir-fortement",
+    "lorsque-je-suis-sous-pression-mes-emotions-controlent-souvent-completement-mes-reactions"
+   ]
+  },
+  {
+   "id": "relations",
+   "label": "Relations positives et soutien social",
+   "questionIds": [
+    "je-peux-compter-sur-au-moins-une-personne-lorsque-je-traverse-une-periode-difficile",
+    "je-me-sens-respecte-e-par-les-personnes-qui-comptent-pour-moi",
+    "je-suis-capable-de-construire-des-relations-fondees-sur-la-confiance",
+    "je-peux-demander-de-l-aide-lorsque-j-en-ai-reellement-besoin",
+    "je-me-sens-souvent-seul-e-meme-lorsque-je-suis-entoure-e-de-personnes"
+   ]
+  },
+  {
+   "id": "sens-valeurs",
+   "label": "Sens, valeurs et direction de vie",
+   "questionIds": [
+    "je-sais-quelles-valeurs-sont-importantes-pour-moi",
+    "je-sais-relativement-bien-quelle-personne-je-souhaite-devenir",
+    "mes-decisions-importantes-sont-generalement-en-accord-avec-mes-valeurs",
+    "je-sens-que-ma-vie-peut-avoir-un-sens-et-une-utilite",
+    "je-vis-souvent-sans-savoir-ce-qui-donne-reellement-du-sens-a-ma-vie"
+   ]
+  },
+  {
+   "id": "autonomie",
+   "label": "Autonomie et responsabilité",
+   "questionIds": [
+    "je-prends-progressivement-la-responsabilite-de-mes-choix",
+    "je-suis-capable-de-prendre-des-decisions-importantes-par-moi-meme",
+    "lorsque-je-commets-une-erreur-je-peux-reconnaitre-ma-part-de-responsabilite",
+    "je-cherche-a-agir-en-accord-avec-mes-convictions-et-mes-responsabilites",
+    "je-laisse-souvent-les-autres-decider-a-ma-place-parce-que-je-ne-me-sens-pas-capable-de-choisir"
+   ]
+  },
+  {
+   "id": "accomplissement",
+   "label": "Accomplissement et développement personnel",
+   "questionIds": [
+    "j-ai-des-objectifs-qui-donnent-une-direction-a-mes-efforts",
+    "j-ai-le-sentiment-de-progresser-dans-certains-domaines-importants-de-ma-vie",
+    "je-cherche-regulierement-a-apprendre-et-a-m-ameliorer",
+    "je-transforme-progressivement-certaines-de-mes-idees-en-actions-concretes",
+    "je-commence-souvent-des-choses-importantes-mais-j-abandonne-avant-de-les-terminer"
+   ]
+  },
+  {
+   "id": "bonheur-durable",
+   "label": "Bonheur durable et satisfaction de vie",
+   "questionIds": [
+    "je-suis-globalement-satisfait-e-de-la-direction-que-prend-ma-vie",
+    "je-sais-reconnaitre-et-apprecier-les-choses-positives-que-j-ai-deja-dans-ma-vie",
+    "je-peux-etre-heureux-se-meme-lorsque-ma-vie-n-est-pas-parfaite",
+    "je-considere-que-mon-bonheur-depend-aussi-de-la-maniere-dont-je-choisis-de-vivre-et-d-agir",
+    "malgre-les-difficultes-de-la-vie-je-parviens-generalement-a-trouver-des-raisons-d-avancer"
+   ]
+  }
+ ]
+}
