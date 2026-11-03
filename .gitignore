@@ -9,3 +9,4 @@ coverage/
 
 # Outils locaux
 .claude/
+.netlify/

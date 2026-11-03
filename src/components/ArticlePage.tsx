@@ -937,6 +937,283 @@ const LayoutGuide: React.FC<{ article: Article; url: string }> = ({ article, url
   );
 };
 
+/** Mise en page propre à « L'autosabotage » : phrases-clés en très grand, citations empilées, questions numérotées, sans cadre */
+const LayoutSelf: React.FC<{ article: Article; url: string }> = ({ article, url }) => {
+  const toBlocks = (s: string) => s.split(/\n{2,}/).map((b) => b.trim()).filter(Boolean);
+  const isList = (b: string) => b.split('\n').every((l) => /^-\s/.test(l.trim()));
+  const items = (b: string) => b.split('\n').map((l) => l.replace(/^-\s*/, '').trim());
+  const isBoldOnly = (b: string) => /^\*\*[^*]+\*\*$/.test(b);
+  const isItalicOnly = (b: string) => /^\*[^*]+\*$/.test(b);
+  const plain = (b: string) => b.replace(/\*+/g, '');
+
+  const [introRaw, ...sectionsRaw] = article.content.replace(/\r\n/g, '\n').split(/\n(?=## )/);
+  const sections = sectionsRaw.map((sec) => {
+    const m = sec.match(/^##\s+(.*)\n+([\s\S]*)$/);
+    return { title: m?.[1].trim() ?? '', blocks: toBlocks(m?.[2] ?? '') };
+  });
+
+  // Rend un bloc selon sa forme ; « kind » dit comment afficher les listes
+  const renderBlock = (b: string, key: string, kind: 'quotes' | 'steps' | 'text') => {
+    if (isList(b)) {
+      const list = items(b);
+      if (kind === 'quotes') {
+        return (
+          <ul key={key} className="my-4 flex flex-col gap-5">
+            {list.map((q) => (
+              <li key={q} className="font-bricolage text-[clamp(1.5rem,3.2vw,2.3rem)] italic leading-[1.25] text-[#15173D]">
+                {q}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+      return (
+        <ol key={key} className="my-6 grid gap-x-12 gap-y-7 sm:grid-cols-2">
+          {list.map((q, i) => (
+            <li key={q} className="flex gap-5">
+              <span aria-hidden="true" className="font-bricolage text-[2.6rem] leading-none text-[#D98268]">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className="pt-1 text-[1.15rem] leading-snug text-[#15173D]">{q}</span>
+            </li>
+          ))}
+        </ol>
+      );
+    }
+    if (b.startsWith('#') && !b.startsWith('##')) {
+      return (
+        <p key={key} className="mt-10 flex flex-wrap gap-x-5 gap-y-2 text-[1rem] text-[#D98268]">
+          {b.split(/\s+/).map((t) => (
+            <span key={t}>{t}</span>
+          ))}
+        </p>
+      );
+    }
+    if (isBoldOnly(b) && /^\*\*[«"]/.test(b)) {
+      return (
+        <p key={key} className="my-6 text-center font-bricolage text-[clamp(1.6rem,3.4vw,2.5rem)] leading-[1.3] text-[#15173D]">
+          {plain(b)}
+        </p>
+      );
+    }
+    if (isBoldOnly(b) && /Psy GB/i.test(b)) {
+      return (
+        <p key={key} className="mt-4 font-semibold text-[#15173D]">
+          {plain(b)}
+        </p>
+      );
+    }
+    if (isBoldOnly(b)) {
+      return (
+        <p key={key} className="my-4 font-bricolage text-[clamp(2.4rem,6vw,4.4rem)] leading-[1.05] text-[#D98268]">
+          {plain(b)}
+        </p>
+      );
+    }
+    if (isItalicOnly(b)) {
+      return (
+        <p key={key} className="mt-12 font-bricolage text-[clamp(1.4rem,2.8vw,2rem)] italic leading-[1.35] text-[#15173D]">
+          {plain(b)}
+        </p>
+      );
+    }
+    return (
+      <div key={key} className="article-body text-[1.15rem] leading-[1.85] text-[#15173D]/90">
+        <Md>{b}</Md>
+      </div>
+    );
+  };
+
+  const introBlocks = toBlocks(introRaw);
+
+  return (
+    <article className="bg-[#F3F1F8] py-12 lg:py-16">
+      {/* Héro : bandeau rose avec le titre à gauche ; l'affiche, légèrement inclinée, déborde sous le bandeau */}
+      <header className="-mt-12 -mb-12 lg:-mt-16 lg:-mb-16">
+        <div className="bg-[#E9D5E4] pt-12 pb-10 lg:pt-16 lg:pb-0">
+          <div className="mx-auto max-w-[1160px] px-6 lg:px-12">
+            <BackLink />
+            <div className="mt-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
+              <div className="lg:col-span-5">
+                <p className="text-[14px] uppercase tracking-[0.14em] text-[#D98268] font-bricolage">{article.category}</p>
+                <h1 className="mt-5 font-bricolage text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.12] text-[#15173D]">{article.title}</h1>
+                <p className="mt-6 text-[15px] text-[#5A5D7E]">{metaLine(article)}</p>
+              </div>
+              {article.imageUrl && (
+                <img
+                  src={article.imageUrl}
+                  alt=""
+                  referrerPolicy="no-referrer"
+                  className="relative z-10 block h-auto w-full rounded-[20px] shadow-[0_40px_70px_-30px_rgba(21,23,61,0.55)] lg:col-span-7 lg:-mb-24 lg:translate-y-20 lg:rotate-[2deg]"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className="mx-auto mt-28 max-w-[760px] px-6 lg:mt-60">
+        {/* Introduction : le premier paragraphe en grand, puis la phrase-clé, puis les pensées qui nous freinent */}
+        <div className="flex flex-col gap-6">
+          {introBlocks.map((b, i) =>
+            i === 0 ? (
+              <div key={i} className="article-body text-[clamp(1.35rem,2.4vw,1.7rem)] leading-[1.6] text-[#15173D]">
+                <Md>{b}</Md>
+              </div>
+            ) : (
+              renderBlock(b, `intro-${i}`, 'quotes')
+            ),
+          )}
+        </div>
+
+        {/* Les deux parties */}
+        {sections.map((s, si) => (
+          <section key={s.title} className="mt-24">
+            <h2 className="font-bricolage text-[clamp(1.8rem,3.6vw,2.7rem)] leading-[1.15] text-[#15173D]">{s.title}</h2>
+            <div className="mt-8 flex flex-col gap-6">
+              {s.blocks.map((b, i) => renderBlock(b, `s${si}-${i}`, 'steps'))}
+            </div>
+          </section>
+        ))}
+
+        <div className="mt-14 flex flex-col gap-3 sm:flex-row">
+          <a href={url} target="_blank" rel="noopener noreferrer" className={BTN.primary}>
+            En parler sur WhatsApp
+          </a>
+          <Link to="/tous-les-articles" className={BTN.outline}>
+            Tous les articles
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+/** Mise en page propre à « Réussir son mois d'août » : héro plein cadre, lettres de l'acronyme AOÛT en sommaire fixe, texte à plat */
+const LayoutAugust: React.FC<{ article: Article; url: string }> = ({ article, url }) => {
+  const parts = article.content.replace(/\r\n/g, '\n').split(/\n---\n/).map((p) => p.trim()).filter(Boolean);
+  const stripTitle = (s: string) => s.replace(/^#\s[^\n]*\n+/, '').trim();
+
+  const intro = (() => {
+    const m = stripTitle(parts[0] ?? '').match(/^##\s+(.*)\n+([\s\S]*)$/);
+    return { title: m?.[1].trim() ?? '', body: m?.[2].trim() ?? '' };
+  })();
+
+  const letters = parts.flatMap((p, i) => {
+    const m = p.match(/^##\s+(\S+),\s*([^:\n]+?)\s*:\s*(.*)\n+([\s\S]*)$/);
+    return m ? [{ id: `lettre-${i}`, letter: m[1], word: m[2].trim(), sub: m[3].trim(), body: m[4].trim() }] : [];
+  });
+
+  const conclusion = parts.find((p) => /^##\s+Conclusion/.test(p));
+  const conclMatch = conclusion?.match(/^##\s+(.*)\n+([\s\S]*)$/);
+  const quote = parts.find((p) => p.startsWith('>'))?.replace(/^>\s*/gm, '').replace(/\*/g, '').trim() ?? '';
+
+  const about = parts.find((p) => /^##\s+À propos/.test(p)) ?? '';
+  const contacts = about.split('\n').flatMap((l) => {
+    const m = l.trim().match(/^\*\s+\*\*([^*]+)\*\*\s*:\s*(.*)$/);
+    return m ? [{ label: m[1].trim(), value: m[2].trim() }] : [];
+  });
+  const aboutIntro = about.split('\n').find((l) => l.trim() && !l.startsWith('#') && !l.trim().startsWith('*')) ?? '';
+
+  const signature = parts[parts.length - 1] ?? '';
+  const motto = signature.match(/(?:^|\n)\*([^*]+)\*/)?.[1] ?? '';
+  const sign = signature.match(/\*\*([^*]+)\*\*/)?.[1] ?? '';
+
+  return (
+    <article className="bg-[#F3F1F8]">
+      {/* Écran partagé : la photo reste fixe à gauche, le texte défile à droite */}
+      <div className="lg:grid lg:grid-cols-2">
+        <div className="relative h-[320px] sm:h-[420px] lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)]">
+          {article.imageUrl && (
+            <img src={article.imageUrl} alt="" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover object-[center_55%]" />
+          )}
+        </div>
+
+        <div className="px-6 py-12 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+          <div className="max-w-[640px]">
+            <Link to="/tous-les-articles" className="inline-flex items-center gap-2 text-[15px] text-[#5A5D7E] transition-colors hover:text-[#15173D]">
+              <span aria-hidden="true">←</span> Tous les articles
+            </Link>
+            <p className="mt-10 text-[14px] uppercase tracking-[0.14em] text-[#D98268] font-bricolage">{article.category}</p>
+            <h1 className="mt-4 font-bricolage text-[clamp(2rem,3.6vw,3.2rem)] leading-[1.1] text-[#15173D]">{article.title}</h1>
+            <p className="mt-5 text-[15px] text-[#5A5D7E]">{metaLine(article)}</p>
+
+            {/* Introduction */}
+            <div className="article-body mt-12 text-[1.25rem] leading-[1.8] text-[#15173D]">
+              <Md>{intro.body}</Md>
+            </div>
+
+            {/* Les quatre lettres : une grande lettre pâle derrière chaque titre */}
+            <div className="mt-24 flex flex-col gap-28">
+              {letters.map((l) => (
+                <section key={l.id} id={l.id} className="relative scroll-mt-28">
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -left-3 -top-14 select-none font-bricolage text-[11rem] leading-none text-[#D98268]/15"
+                  >
+                    {l.letter}
+                  </span>
+                  <h2 className="relative font-bricolage text-[clamp(2.4rem,4.6vw,3.6rem)] leading-[1.05] text-[#15173D]">{l.word}</h2>
+                  <p className="relative mt-3 font-bricolage text-[1.3rem] italic leading-snug text-[#D98268]">{l.sub}</p>
+                  <div className="article-body relative mt-8 text-[1.1rem] leading-[1.85] text-[#15173D]/88">
+                    <Md>{l.body}</Md>
+                  </div>
+                </section>
+              ))}
+            </div>
+
+            {conclMatch && (
+              <section className="mt-28">
+                <h2 className="font-bricolage text-[clamp(1.9rem,3.2vw,2.6rem)] leading-[1.15] text-[#15173D]">{conclMatch[1].trim()}</h2>
+                <div className="article-body mt-6 text-[1.12rem] leading-[1.85] text-[#15173D]/90">
+                  <Md>{conclMatch[2].trim()}</Md>
+                </div>
+              </section>
+            )}
+
+            {quote && (
+              <p className="mt-24 font-bricolage text-[clamp(1.5rem,2.6vw,2.1rem)] italic leading-[1.4] text-[#15173D]">{quote}</p>
+            )}
+
+            {contacts.length > 0 && (
+              <section className="mt-24">
+                <h2 className="font-bricolage text-[1.6rem] leading-tight text-[#15173D]">À propos de Psy GBÈVIMI</h2>
+                {aboutIntro && <p className="mt-4 text-[1.05rem] leading-[1.7] text-[#15173D]/80">{aboutIntro}</p>}
+                <dl className="mt-8 grid gap-y-5 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-x-6">
+                  {contacts.map((c) => (
+                    <React.Fragment key={c.label}>
+                      <dt className="font-bricolage text-[13px] uppercase tracking-[0.14em] text-[#5A5D7E] sm:pt-1.5">{c.label}</dt>
+                      <dd className="article-body break-words text-[1.05rem] leading-snug text-[#15173D]">
+                        <Md>{c.value}</Md>
+                      </dd>
+                    </React.Fragment>
+                  ))}
+                </dl>
+              </section>
+            )}
+
+            {(motto || sign) && (
+              <div className="mt-20">
+                {motto && <p className="font-bricolage text-[1.4rem] italic leading-[1.35] text-[#15173D]">{motto}</p>}
+                {sign && <p className="mt-3 font-semibold text-[#15173D]">{sign}</p>}
+              </div>
+            )}
+
+            <div className="mt-12 flex flex-col gap-3 sm:flex-row">
+              <a href={url} target="_blank" rel="noopener noreferrer" className={BTN.primary}>
+                En parler sur WhatsApp
+              </a>
+              <Link to="/tous-les-articles" className={BTN.outline}>
+                Tous les articles
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+};
+
 export const ArticlePage: React.FC = () => {
   const { slug } = useParams();
   const article = ARTICLES.find((a) => a.slug === slug);
@@ -963,6 +1240,12 @@ export const ArticlePage: React.FC = () => {
   if (article.id.startsWith('0c708900')) {
     // « Cancer et bonheur durable » : mise en page à part
     layout = <LayoutPillars article={article} url={discussUrl} />;
+  } else if (article.id.startsWith('fc4a6652')) {
+    // « Réussir son mois d'août » : héro plein cadre et lettres AOÛT
+    layout = <LayoutAugust article={article} url={discussUrl} />;
+  } else if (article.id.startsWith('3b0179e6')) {
+    // « L'autosabotage » : phrases-clés en très grand
+    layout = <LayoutSelf article={article} url={discussUrl} />;
   } else if (article.id.startsWith('3c41eb3e')) {
     // « L'honnêteté » : sommaire fixe et sections
     layout = <LayoutGuide article={article} url={discussUrl} />;
