@@ -595,7 +595,6 @@ export const FOOTER_DATA = {
     { label: 'Politique de confidentialité', href: '/confidentialite' },
     { label: 'Mentions légales', href: '/mentions-legales' },
     { label: 'Conditions d\'utilisation', href: '/cgu' },
-    { label: 'Protection des données (RGPD)', href: '/rgpd' },
   ],
   footerWhatsAppMessage: 'Bonjour Psy Gbevimi, j\'ai une question. Je viens de la page « Footer ».',
 };

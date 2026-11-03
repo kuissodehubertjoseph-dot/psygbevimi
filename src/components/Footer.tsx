@@ -8,64 +8,59 @@ const titleCls = 'font-bricolage font-semibold text-[13px] uppercase tracking-[0
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#15173D] text-[#F3F1F8] border-t border-[#F3F1F8]/15 pt-16 pb-[calc(6rem+env(safe-area-inset-bottom,0px))] lg:pb-16">
+    <footer className="bg-[#15173D] text-[#F3F1F8] border-t border-[#F3F1F8]/15 pt-14 pb-[calc(6rem+env(safe-area-inset-bottom,0px))] lg:pb-14">
       <div className="max-w-[1160px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Marque */}
-          <div className="lg:col-span-4 flex flex-col items-start gap-5">
-            <Link to="/" className="flex items-center gap-3" aria-label={`${D.name} - Accueil`}>
-              <span className="rounded-[16px] bg-white px-4 py-3 flex items-center justify-center">
-                <img src="/images/logo.webp" alt={D.name} className="h-[120px] w-auto object-contain" />
+        {/* Ligne de marque : logo réduit, présentation, lien YouTube */}
+        <div className="flex flex-col gap-6 pb-10 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
+            <Link to="/" className="shrink-0" aria-label={`${D.name} - Accueil`}>
+              <span className="flex items-center justify-center rounded-[12px] bg-white px-3 py-2">
+                <img src="/images/logo.webp" alt={D.name} className="h-[56px] w-auto object-contain" />
               </span>
             </Link>
-            <p className="font-atkinson text-[15px] text-[#C9C8E3] leading-relaxed max-w-[36ch]">{D.tagline}</p>
-            <a href={D.youtubeUrl} target="_blank" rel="noopener noreferrer" className={`${linkCls} underline underline-offset-4`}>
-              {D.youtubeLabel}
-            </a>
+            <p className="max-w-[46ch] font-atkinson text-[15px] leading-relaxed text-[#C9C8E3]">{D.tagline}</p>
           </div>
+          <a href={D.youtubeUrl} target="_blank" rel="noopener noreferrer" className={`${linkCls} shrink-0 underline underline-offset-4`}>
+            {D.youtubeLabel}
+          </a>
+        </div>
 
-          {/* Liens : trois colonnes de même largeur */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8">
-            {D.groups.map((g) => (
-              <nav key={g.title} aria-label={g.title}>
-                <p className={titleCls}>{g.title}</p>
-                <ul className="space-y-3">
-                  {g.links.map((l) => (
-                    <li key={l.href}>
-                      <Link to={l.href} className={linkCls}>
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            ))}
-
-            <div>
-              <p className={titleCls}>{D.contactTitle}</p>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href={createWhatsAppUrl(D.footerWhatsAppMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={linkCls}
-                  >
-                    {D.whatsappLabel}
-                  </a>
-                </li>
-                <li>
-                  <a href={`mailto:${D.email}`} className={`${linkCls} break-all`}>
-                    {D.email}
-                  </a>
-                </li>
-                <li>
-                  <Link to="/contact" className={linkCls}>
-                    {D.writeUs}
-                  </Link>
-                </li>
+        {/* Liens : Accompagner, Découvrir sur deux colonnes, Contact */}
+        <div className="grid grid-cols-1 gap-10 border-t border-[#F3F1F8]/10 pt-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12">
+          {D.groups.map((g, i) => (
+            <nav key={g.title} aria-label={g.title} className={i === 0 ? 'lg:col-span-3' : 'lg:col-span-5'}>
+              <p className={titleCls}>{g.title}</p>
+              <ul className={i === 0 ? 'space-y-3' : 'grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2'}>
+                {g.links.map((l) => (
+                  <li key={l.href}>
+                    <Link to={l.href} className={linkCls}>
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
-            </div>
+            </nav>
+          ))}
+
+          <div className="lg:col-span-4">
+            <p className={titleCls}>{D.contactTitle}</p>
+            <ul className="space-y-3">
+              <li>
+                <a href={createWhatsAppUrl(D.footerWhatsAppMessage)} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                  {D.whatsappLabel}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${D.email}`} className={`${linkCls} break-all`}>
+                  {D.email}
+                </a>
+              </li>
+              <li>
+                <Link to="/contact" className={linkCls}>
+                  {D.writeUs}
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
