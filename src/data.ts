@@ -52,9 +52,9 @@ export const HERO_DATA = {
 };
 
 export const REASSURANCE_DATA = [
-  { value: '3 programmes', label: 'adultes, jeunes, entreprises' },
-  { value: 'Tests gratuits', label: 'faire le point en 5 minutes' },
-  { value: 'Fondée par un psychologue clinicien', label: 'fonctionnaire humanitaire international' },
+  { value: '3 programmes', label: 'adultes, jeunes, entreprises.' },
+  { value: 'Tests gratuits', label: 'faire le point en 5 minutes.' },
+  { value: 'Fondée par un psychologue clinicien', label: 'fonctionnaire humanitaire international.' },
 ];
 
 export interface ThoughtItem {
@@ -72,8 +72,8 @@ export const RECOGNIZE_DATA: {
   thoughts: ThoughtItem[];
 } = {
   eyebrow: 'Vous vous reconnaissez ?',
-  title: 'Vous n\'avez pas à tout porter seul·e.',
-  intro: 'Ces phrases reviennent souvent lors du premier échange. Si l\'une d\'elles vous parle, parlons-en.',
+  title: 'Et si votre plus grande richesse était enfouie là où vous ne regardez jamais ?',
+  intro: '',
   thoughts: [
     { id: 'thought-1', text: '« Je rumine et je dors mal. »', programId: 'sante', programName: 'Santé mentale', indentDesktop: '0%' },
     { id: 'thought-2', text: '« Des blessures du passé me pèsent encore. »', programId: 'sante', programName: 'Santé mentale', indentDesktop: '12%' },

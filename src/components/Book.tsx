@@ -13,7 +13,8 @@ export const Book: React.FC = () => {
         <div className="max-w-[900px] mx-auto px-6 text-center">
           <h1
             id="book-heading"
-            className="font-bricolage text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.06] text-[#15173D]"
+            className="font-bricolage font-bold text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.06] text-[#15173D]"
+            style={{ fontWeight: 700 }}
           >
             {D.title}
           </h1>
@@ -21,9 +22,9 @@ export const Book: React.FC = () => {
         </div>
         <div className="relative z-10 mt-12 -mb-24 lg:-mb-32 flex justify-center px-6">
           <img
-            src={IMAGES.book}
+            src="/images/livre-hero.png"
             alt={`Couverture du livre « ${D.title} »`}
-            className="w-[240px] sm:w-[300px] lg:w-[340px] h-auto rounded-[6px] shadow-[0_30px_60px_-20px_rgba(21,23,61,0.55)]"
+            className="w-[300px] sm:w-[380px] lg:w-[440px] h-auto drop-shadow-[0_24px_30px_rgba(21,23,61,0.35)]"
           />
         </div>
       </section>

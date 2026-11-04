@@ -9,10 +9,13 @@ export const TestsPage: React.FC = () => {
       {/* Ouverture */}
       <section className="bg-[#F3F1F8] pt-14 pb-10 lg:pt-20 lg:pb-12">
         <div className="max-w-[1160px] mx-auto px-6 lg:px-12">
-          <h1 className="font-bricolage text-[clamp(2.2rem,4.8vw,3.8rem)] leading-[1.1] text-[#15173D] max-w-[20ch]">
+          <h1
+            className="font-bricolage font-bold uppercase text-[clamp(2.2rem,4.8vw,3.8rem)] leading-[1.1] text-[#15173D] max-w-[20ch]"
+            style={{ fontWeight: 700 }}
+          >
             {D.title}
           </h1>
-          <p className="mt-6 text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[58ch]">{D.intro}</p>
+          <p className="mt-6 font-bold text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[58ch]">{D.intro}</p>
         </div>
       </section>
 
@@ -26,10 +29,10 @@ export const TestsPage: React.FC = () => {
               className="bg-white rounded-[24px] border border-[#15173D]/10 p-7 lg:p-9 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center focus-visible:outline-2 focus-visible:outline-[#15173D] focus-visible:outline-offset-4"
             >
               <div className="lg:col-span-6">
-                <p className="font-bricolage font-semibold text-[12px] uppercase tracking-[0.14em] text-[#D98268]">
-                  {t.programme}
-                </p>
-                <h2 className="mt-3 font-bricolage text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.2] text-[#15173D]">
+                <h2
+                  className="font-bricolage font-bold text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.2] text-[#15173D]"
+                  style={{ fontWeight: 700 }}
+                >
                   {t.title}
                 </h2>
                 <p className="mt-2 text-[1.05rem] leading-[1.6] text-[#5A5D7E]">{t.audience}</p>
@@ -46,7 +49,7 @@ export const TestsPage: React.FC = () => {
             </Link>
           ))}
 
-          <p className="mt-6 text-[14px] leading-[1.7] text-[#5A5D7E] max-w-[85ch]">{D.disclaimer}</p>
+          <p className="mt-6 font-bold text-[14px] leading-[1.7] text-[#5A5D7E] max-w-[85ch]">{D.disclaimer}</p>
         </div>
       </section>
     </>

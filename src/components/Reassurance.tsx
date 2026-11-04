@@ -20,7 +20,7 @@ export const Reassurance: React.FC = () => {
                   : 'pt-6 lg:pt-0 lg:pl-8'
               }`}
             >
-              <span className="font-bricolage font-bold text-[36px] text-[#15173D] leading-tight tracking-tight">
+              <span className="font-bricolage font-bold text-[30px] uppercase text-[#15173D] leading-tight tracking-tight">
                 {item.value}
               </span>
               <span className="font-atkinson text-[16px] text-[#5A5D7E] mt-2">

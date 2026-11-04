@@ -21,21 +21,21 @@ export const TestPreview: React.FC = () => {
               </ButtonLink>
             </div>
 
-            <p className="mt-8 font-atkinson text-[14px] text-[#5A5D7E] leading-relaxed max-w-[60ch]">{D.disclaimer}</p>
+            <p className="mt-8 font-atkinson font-bold text-[14px] text-[#5A5D7E] leading-relaxed max-w-[60ch]">{D.disclaimer}</p>
           </div>
 
           <div className="lg:col-span-5 bg-[#F3F1F8] rounded-[8px] p-6 lg:p-8 border border-[#15173D]/10 self-start">
-            <span className="inline-flex items-center px-3 py-1 rounded-[8px] text-[13px] font-atkinson font-semibold bg-[#15173D] text-[#F3F1F8]">
+            <span className="inline-flex items-center px-3 py-1 rounded-[8px] text-[13px] font-atkinson font-bold bg-[#15173D] text-[#F3F1F8]">
               {D.badge}
             </span>
-            <p className="mt-4 font-atkinson text-[15px] text-[#15173D]/90 leading-[1.65]">{D.description}</p>
+            <p className="mt-4 font-atkinson font-bold text-[15px] text-[#15173D]/90 leading-[1.65]">{D.description}</p>
 
-            <h3 className="mt-6 font-bricolage font-semibold text-[15px] text-[#15173D]">{D.dimensionsTitle}</h3>
+            <h3 className="mt-6 font-bricolage font-bold text-[15px] text-[#15173D]" style={{ fontWeight: 700 }}>{D.dimensionsTitle}</h3>
             <ul className="mt-3 flex flex-wrap gap-2">
               {D.dimensions.map((dimension) => (
                 <li
                   key={dimension}
-                  className="px-3 py-1.5 rounded-[8px] bg-[#E9D5E4]/60 border border-[#15173D]/10 font-atkinson text-[13px] text-[#15173D] leading-snug"
+                  className="px-3 py-1.5 rounded-[8px] bg-[#E9D5E4]/60 border border-[#15173D]/10 font-atkinson font-bold text-[13px] text-[#15173D] leading-snug"
                 >
                   {dimension}
                 </li>

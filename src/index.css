@@ -14,8 +14,8 @@
   --color-dark-text: #f3f1f8;
   --color-dark-secondary: #c9c8e3;
 
-  /* Literata partout (texte et titres) */
-  --font-sans: "Literata", Georgia, serif;
+  /* Roboto partout (texte et titres) */
+  --font-sans: "Roboto", Arial, sans-serif;
   --font-serif: var(--font-sans);
   --font-bricolage: var(--font-sans);
   --font-atkinson: var(--font-sans);
@@ -294,21 +294,21 @@
   color: #d98268;
 }
 
-/* Titres en Literata, graisse normale (hors couche pour primer sur les classes utilitaires) */
+/* Titres en Roboto, graisse normale (hors couche pour primer sur les classes utilitaires) */
 h1, h2, h3, h4, blockquote {
   font-family: var(--font-serif);
   font-weight: 400;
   letter-spacing: normal;
 }
 
-/* Section « accompagnements » et pages programme : typographie de l'ancien site (Newsreader + Figtree) */
+/* Section « accompagnements » et pages programme : Roboto aussi */
 .old-skin {
-  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 .old-skin h1, .old-skin h2, .old-skin h3 {
-  font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-family: var(--font-sans);
 }
 .old-skin h4, .old-skin .old-sans {
-  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
 }

@@ -25,21 +25,29 @@ export const Founder: React.FC<FounderProps> = ({ showInitiativeLink = false }) 
           </div>
 
           <div className="lg:col-span-7 flex flex-col items-start">
-            <H2 id="founder-heading">{D.title}</H2>
+            <H2 id="founder-heading">
+              {D.title.split('GBÈVIMI').map((part, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <strong className="font-black">GBÈVIMI</strong>}
+                  {part}
+                </React.Fragment>
+              ))}
+            </H2>
 
-            <p className="mt-6 font-atkinson text-[#15173D]/90 text-[1.125rem] leading-[1.65] max-w-[65ch]">
+            <p className="mt-6 indent-12 font-atkinson text-[#15173D]/90 text-[1.125rem] leading-[1.65] max-w-[65ch]">
               {D.paragraph}
             </p>
 
-            <div className="mt-8 w-full border-t border-b border-[#15173D]/10 divide-y divide-[#15173D]/10">
+            <div className="mt-8 w-full">
               {D.credentials.map((cred) => (
-                <div key={cred} className="py-3 font-atkinson text-[16px] text-[#15173D]">
+                <div key={cred} className="py-3 flex items-center gap-3 font-atkinson text-[16px] text-[#15173D]">
+                  <span aria-hidden="true" className="shrink-0 w-3 h-3 rounded-full bg-[#15173D]" />
                   {cred}
                 </div>
               ))}
             </div>
 
-            <blockquote className="mt-8 italic font-atkinson text-[#15173D] text-[1.15rem]">
+            <blockquote className="mt-8 italic font-atkinson text-[#E5322D] text-[1.15rem]">
               « {D.quote} »
             </blockquote>
 
