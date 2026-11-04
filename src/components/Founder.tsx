@@ -26,9 +26,9 @@ export const Founder: React.FC<FounderProps> = ({ showInitiativeLink = false }) 
 
           <div className="lg:col-span-7 flex flex-col items-start">
             <H2 id="founder-heading">
-              {D.title.split('GBÈVIMI').map((part, i) => (
+              {D.title.split('GBÈVIMI C. F. Houénon').map((part, i) => (
                 <React.Fragment key={i}>
-                  {i > 0 && <strong className="font-black">GBÈVIMI</strong>}
+                  {i > 0 && <strong className="font-black">GBÈVIMI C. F. Houénon</strong>}
                   {part}
                 </React.Fragment>
               ))}
@@ -40,7 +40,7 @@ export const Founder: React.FC<FounderProps> = ({ showInitiativeLink = false }) 
 
             <div className="mt-8 w-full">
               {D.credentials.map((cred) => (
-                <div key={cred} className="py-3 flex items-center gap-3 font-atkinson text-[16px] text-[#15173D]">
+                <div key={cred} className="py-1 flex items-center gap-3 font-atkinson text-[16px] text-[#15173D]">
                   <span aria-hidden="true" className="shrink-0 w-3 h-3 rounded-full bg-[#15173D]" />
                   {cred}
                 </div>

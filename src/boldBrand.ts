@@ -1,5 +1,6 @@
-// Met en gras chaque occurrence de « Gbevimi » / « Gbèvimi » dans le texte affiché du site
-const BRAND = /gb[eè]vimi/gi;
+// Met en gras et en majuscules chaque occurrence de « Gbevimi » / « Gbèvimi » dans le texte affiché du site ;
+// quand le nom complet suit (« C. F. Houénon »), la suite est mise en gras aussi
+const BRAND = /(gb[eè]vimi)(\s+c\.\s*f\.\s+ho[uü]?[eé]non)?/gi;
 const SKIP_TAGS = new Set(['STRONG', 'B', 'SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'TITLE', 'NOSCRIPT']);
 
 function boldIn(node: Text) {
@@ -17,8 +18,15 @@ function boldIn(node: Text) {
     frag.append(text.slice(last, m.index));
     const strong = document.createElement('strong');
     strong.style.fontWeight = '700';
-    strong.textContent = m[0];
+    strong.style.textTransform = 'uppercase';
+    strong.textContent = m[1];
     frag.append(strong);
+    if (m[2]) {
+      const rest = document.createElement('strong');
+      rest.style.fontWeight = '700';
+      rest.textContent = m[2];
+      frag.append(rest);
+    }
     last = m.index + m[0].length;
   }
   frag.append(text.slice(last));

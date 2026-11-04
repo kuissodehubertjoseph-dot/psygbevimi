@@ -17,7 +17,7 @@ export const Recognize: React.FC<RecognizeProps> = () => {
         <div className="lg:col-span-5">
           <h2
             id="recognize-heading"
-            className="font-bold text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.015em] text-[#E5322D]"
+            className="font-bold uppercase text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.015em] text-[#E5322D]"
             style={{ fontFamily: 'Roboto, Arial, sans-serif', fontWeight: 700 }}
           >
             {RECOGNIZE_DATA.title}
