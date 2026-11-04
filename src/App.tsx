@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F1F8] text-[#15173D] flex flex-col font-atkinson relative pb-[56px] lg:pb-0 selection:bg-[#D98268] selection:text-[#15173D]">
+    <div className="min-h-screen bg-[#F3F1F8] text-[#15173D] flex flex-col font-atkinson relative selection:bg-[#D98268] selection:text-[#15173D]">
       {/* Rail de défilement (bureau et barre mobile) */}
 
       {/* En-tête collant avec navigation */}

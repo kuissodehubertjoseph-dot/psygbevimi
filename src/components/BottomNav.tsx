@@ -16,7 +16,7 @@ export const BottomNav: React.FC = () => {
   return (
     <nav
       aria-label="Navigation principale"
-      className="lg:hidden fixed bottom-[56px] left-0 right-0 z-50 glass !border-x-0"
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass !border-x-0 !border-b-0 pb-[env(safe-area-inset-bottom,0px)]"
     >
       <ul className="grid grid-cols-5">
         {ITEMS.map(({ href, short, Icon }) => {
