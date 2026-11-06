@@ -44,14 +44,28 @@ const HeroMedia: React.FC = () => {
   };
 
   return (
-    <div className="mt-8 flex flex-wrap items-center gap-3">
-      <a href={VIDEO_URL} target="_blank" rel="noopener noreferrer" className={`${BTN.outline} gap-2`}>
-        <Play size={18} aria-hidden="true" /> Lire la vidéo
+    <div className="mt-9 flex flex-wrap items-center gap-4">
+      {/* Vidéo : un disque « play » qui pulse */}
+      <a
+        href={VIDEO_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-4 pr-6 rounded-full bg-white hover:bg-[#E9D5E4] border border-[#15173D]/10 shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#D98268]"
+      >
+        <span className="relative grid place-items-center h-14 w-14 rounded-full bg-[#D98268] text-[#15173D]">
+          <Play size={22} fill="currentColor" className="relative ml-0.5" aria-hidden="true" />
+        </span>
+        <span className="font-bricolage font-semibold text-[16px] text-[#15173D]">Lire la vidéo</span>
       </a>
+
+      {/* Audio : une pastille avec égaliseur animé pendant la lecture */}
       {supported && (
-        <>
-          <button type="button" onClick={toggleAudio} className={`${BTN.primary} gap-2`}>
-            {state === 'playing' ? <Pause size={18} aria-hidden="true" /> : <Headphones size={18} aria-hidden="true" />}
+        <div className="inline-flex items-center gap-3">
+          <button
+            type="button"
+            onClick={toggleAudio}
+            className="inline-flex items-center gap-3 h-14 px-7 rounded-full bg-[#15173D] hover:bg-[#2A2D63] text-[#F3F1F8] font-bricolage font-semibold text-[16px] transition-colors focus-visible:outline-2 focus-visible:outline-[#D98268]"
+          >
             {state === 'playing' ? "Pause l'audio" : state === 'paused' ? "Reprendre l'audio" : "Lire l'audio"}
           </button>
           {state !== 'idle' && (
@@ -66,11 +80,28 @@ const HeroMedia: React.FC = () => {
               Arrêter
             </button>
           )}
-        </>
+        </div>
       )}
     </div>
   );
 };
+
+/** Styles et animations du héro (coupées si l'utilisateur préfère moins de mouvement) */
+const HeroStyles: React.FC = () => (
+  <style>{`
+    @keyframes art-rise { from { opacity: 0; transform: translateY(28px) } to { opacity: 1; transform: none } }
+    @keyframes art-spin { to { transform: rotate(360deg) } }
+    @keyframes art-draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
+    .art-spin { animation: art-spin 14s linear infinite }
+    .art-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: art-draw 1s .9s ease-out forwards }
+    .art-rise { animation: art-rise .8s cubic-bezier(.2,.7,.2,1) both }
+    .art-outline { -webkit-text-stroke: 1.5px rgba(243,241,248,.9); color: transparent }
+    @media (prefers-reduced-motion: reduce) {
+      .art-rise { animation: none }
+      .art-draw { animation: none; stroke-dashoffset: 0 }
+    }
+  `}</style>
+);
 
 export const Articles: React.FC = () => {
   const [category, setCategory] = useState<(typeof ARTICLE_CATEGORIES)[number]>('Tous');
@@ -84,20 +115,49 @@ export const Articles: React.FC = () => {
     );
   }, [category, query]);
 
+
   const [featured, ...others] = filtered;
   const shown = others.slice(0, limit);
 
   return (
     <>
-      {/* Ouverture */}
-      <section className="bg-[#F3F1F8] pt-14 pb-8 lg:pt-20 lg:pb-10">
-        <div className="max-w-[1160px] mx-auto px-6 lg:px-12">
-          <h1 className="font-bricolage text-[clamp(2.4rem,5.5vw,4.4rem)] leading-[1.06] text-[#15173D]">{D.title}</h1>
-          <p className="mt-5 text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[58ch]">{D.intro}</p>
-          <HeroMedia />
+      {/* Ouverture : « une » de magazine, titre à gauche, dernier article en couverture à droite */}
+      <section className="relative isolate overflow-hidden bg-[#F3F1F8] text-[#15173D]">
+        <HeroStyles />
+        <div className="absolute -top-24 right-[-8rem] h-[34rem] w-[34rem] rounded-full bg-[#D98268]/20 blur-[2px]" aria-hidden="true" />
+        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-[#E9D5E4]" aria-hidden="true" />
 
-          {/* Recherche et catégories */}
-          <div className="mt-10 flex flex-col gap-5">
+        <div className="relative z-10 max-w-[1160px] mx-auto px-6 lg:px-12 pt-14 lg:pt-20 pb-12 lg:pb-16">
+          <div>
+            <div className="max-w-[860px]">
+              <h1 className="font-bricolage leading-[0.92] tracking-[-0.035em] text-[clamp(3rem,7vw,6.2rem)]">
+                <span className="art-rise block" style={{ animationDelay: '.05s' }}>Lire,</span>
+                <span className="art-rise block" style={{ animationDelay: '.18s' }}>
+                  <span className="relative inline-block">
+                    <span className="absolute inset-x-[-0.08em] bottom-[0.06em] h-[0.34em] -skew-x-6 bg-[#D98268]/55" aria-hidden="true" />
+                    <span className="relative italic">comprendre,</span>
+                  </span>
+                </span>
+                <span className="art-rise block" style={{ animationDelay: '.31s' }}>
+                  en{' '}
+                  <span className="relative inline-block">
+                    parler.
+                  </span>
+                </span>
+              </h1>
+
+              <p className="art-rise mt-9 text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[52ch]" style={{ animationDelay: '.45s' }}>
+                {D.intro}
+              </p>
+              <div className="art-rise" style={{ animationDelay: '.55s' }}>
+                <HeroMedia />
+              </div>
+            </div>
+
+          </div>
+
+          {/* Recherche et catégories (avec le nombre d'articles) */}
+          <div className="mt-14 lg:mt-16 rounded-[30px] bg-white p-4 sm:p-5 shadow-[0_30px_60px_-40px_rgba(21,23,61,0.45)] flex flex-col gap-4">
             <input
               type="search"
               value={query}
@@ -107,7 +167,7 @@ export const Articles: React.FC = () => {
               }}
               placeholder={D.searchLabel}
               aria-label={D.searchLabel}
-              className="h-[56px] w-full px-6 rounded-full bg-white border-2 border-[#15173D]/10 text-[16px] text-[#15173D] focus:outline-none focus:border-[#D98268]"
+              className="h-[56px] w-full px-6 rounded-full bg-[#F3F1F8] border-2 border-transparent text-[16px] text-[#15173D] placeholder:text-[#15173D]/50 focus:outline-none focus:border-[#D98268]"
             />
             <div className="flex flex-wrap gap-2" role="group" aria-label="Catégories">
               {ARTICLE_CATEGORIES.map((c) => (
@@ -131,7 +191,7 @@ export const Articles: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#F3F1F8] pb-16 lg:pb-24">
+      <section className="bg-[#F3F1F8] pt-10 pb-16 lg:pb-24">
         <div className="max-w-[1160px] mx-auto px-6 lg:px-12">
           <p className="text-[15px] text-[#5A5D7E]" aria-live="polite">
             {filtered.length} article{filtered.length > 1 ? 's' : ''}
