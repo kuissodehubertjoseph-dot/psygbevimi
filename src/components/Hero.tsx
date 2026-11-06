@@ -11,8 +11,18 @@ export const Hero: React.FC = () => {
       aria-labelledby="hero-heading"
       className="relative bg-[#15173D] text-[#F3F1F8] min-h-[60vh] overflow-hidden flex items-center pt-8 pb-12 lg:py-14"
     >
-      {/* Image d'arrière-plan + voile bleu nuit pour garder le texte lisible */}
-      <img src="/images/hero-bg.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
+      {/* Vidéo d'arrière-plan + voile bleu nuit pour garder le texte lisible */}
+      <video
+        src="/images/hero-video.mp4"
+        poster="/images/hero-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 bg-[#15173D]/75" aria-hidden="true" />
       <div className="max-w-[1160px] mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
         {/* Colonne texte (7/12 sur bureau) */}
