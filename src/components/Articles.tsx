@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Headphones, Pause, Play } from 'lucide-react';
 import { ARTICLES_DATA as D, ARTICLE_CATEGORIES } from '../data';
 import { ARTICLES, Article, formatArticleDate } from '../content';
 import { BTN } from './ui';
@@ -10,6 +11,66 @@ const meta = (a: Article) =>
   `${formatArticleDate(a.createdAt)} · ${a.readingTime || '5'} min${
     a.commentsCount > 0 ? ` · ${a.commentsCount} commentaire${a.commentsCount > 1 ? 's' : ''}` : ''
   }`;
+
+/** Vidéo YouTube ouverte par le bouton « Lire la vidéo » */
+const VIDEO_URL = 'https://youtu.be/4gbNNM2mX2I';
+
+/** Boutons du héro : lire la vidéo (YouTube) et lire l'audio (lecture vocale du titre et de l'introduction) */
+const HeroMedia: React.FC = () => {
+  const [state, setState] = useState<'idle' | 'playing' | 'paused'>('idle');
+  const supported = typeof window !== 'undefined' && 'speechSynthesis' in window;
+
+  useEffect(() => () => {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+  }, []);
+
+  const toggleAudio = () => {
+    const synth = window.speechSynthesis;
+    if (state === 'playing') {
+      synth.pause();
+      setState('paused');
+    } else if (state === 'paused') {
+      synth.resume();
+      setState('playing');
+    } else {
+      synth.cancel();
+      const u = new SpeechSynthesisUtterance(`${D.title}. ${D.intro}`);
+      u.lang = 'fr-FR';
+      u.onend = () => setState('idle');
+      u.onerror = () => setState('idle');
+      synth.speak(u);
+      setState('playing');
+    }
+  };
+
+  return (
+    <div className="mt-8 flex flex-wrap items-center gap-3">
+      <a href={VIDEO_URL} target="_blank" rel="noopener noreferrer" className={`${BTN.outline} gap-2`}>
+        <Play size={18} aria-hidden="true" /> Lire la vidéo
+      </a>
+      {supported && (
+        <>
+          <button type="button" onClick={toggleAudio} className={`${BTN.primary} gap-2`}>
+            {state === 'playing' ? <Pause size={18} aria-hidden="true" /> : <Headphones size={18} aria-hidden="true" />}
+            {state === 'playing' ? "Pause l'audio" : state === 'paused' ? "Reprendre l'audio" : "Lire l'audio"}
+          </button>
+          {state !== 'idle' && (
+            <button
+              type="button"
+              onClick={() => {
+                window.speechSynthesis.cancel();
+                setState('idle');
+              }}
+              className="text-[14px] text-[#5A5D7E] hover:text-[#15173D] underline underline-offset-4"
+            >
+              Arrêter
+            </button>
+          )}
+        </>
+      )}
+    </div>
+  );
+};
 
 export const Articles: React.FC = () => {
   const [category, setCategory] = useState<(typeof ARTICLE_CATEGORIES)[number]>('Tous');
@@ -33,6 +94,7 @@ export const Articles: React.FC = () => {
         <div className="max-w-[1160px] mx-auto px-6 lg:px-12">
           <h1 className="font-bricolage text-[clamp(2.4rem,5.5vw,4.4rem)] leading-[1.06] text-[#15173D]">{D.title}</h1>
           <p className="mt-5 text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[58ch]">{D.intro}</p>
+          <HeroMedia />
 
           {/* Recherche et catégories */}
           <div className="mt-10 flex flex-col gap-5">
