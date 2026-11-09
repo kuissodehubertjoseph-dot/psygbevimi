@@ -18,13 +18,21 @@ function boldIn(node: Text) {
     frag.append(text.slice(last, m.index));
     const strong = document.createElement('strong');
     strong.style.fontWeight = '700';
-    strong.style.textTransform = 'uppercase';
-    strong.textContent = m[1];
+    // Dans une adresse e-mail (« psygbevimi@… »), le nom reste en minuscules
+    const isEmail = text[m.index + m[1].length] === '@';
+    // Nom complet du fondateur : « Gbèvimi C. F. HOUÉNON » ; sinon la marque seule en majuscules
+    strong.style.textTransform = isEmail || m[2] ? 'none' : 'uppercase';
+    strong.textContent = m[2] ? m[1].charAt(0).toUpperCase() + m[1].slice(1).toLowerCase() : m[1];
     frag.append(strong);
     if (m[2]) {
       const rest = document.createElement('strong');
       rest.style.fontWeight = '700';
-      rest.textContent = m[2];
+      const cut = m[2].search(/ho[uü]?[eé]non$/i);
+      rest.append(m[2].slice(0, cut));
+      const name = document.createElement('span');
+      name.style.textTransform = 'uppercase';
+      name.textContent = m[2].slice(cut);
+      rest.append(name);
       frag.append(rest);
     }
     last = m.index + m[0].length;

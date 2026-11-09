@@ -59,7 +59,6 @@ export const Articles: React.FC = () => {
                 <span className="art-rise block" style={{ animationDelay: '.05s' }}>Lire,</span>
                 <span className="art-rise block" style={{ animationDelay: '.18s' }}>
                   <span className="relative inline-block">
-                    <span className="absolute inset-x-[-0.08em] bottom-[0.06em] h-[0.34em] -skew-x-6 bg-[#D98268]/55" aria-hidden="true" />
                     <span className="relative italic">comprendre,</span>
                   </span>
                 </span>

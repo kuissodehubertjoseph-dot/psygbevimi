@@ -28,7 +28,7 @@ export const Founder: React.FC<FounderProps> = ({ showInitiativeLink = false }) 
             <H2 id="founder-heading">
               {D.title.split('GBÈVIMI C. F. Houénon').map((part, i) => (
                 <React.Fragment key={i}>
-                  {i > 0 && <strong className="font-black">GBÈVIMI C. F. Houénon</strong>}
+                  {i > 0 && <strong className="font-black">Gbèvimi C. F. HOUÉNON</strong>}
                   {part}
                 </React.Fragment>
               ))}

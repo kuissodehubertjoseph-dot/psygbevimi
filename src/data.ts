@@ -9,7 +9,7 @@ export const WHATSAPP_PHONE = '2290129231212';
 export const DISPLAY_PHONE = '+229 01 29 23 12 12';
 export const CONTACT_EMAIL = 'psygbevimi@gmail.com';
 export const YOUTUBE_URL = 'https://youtube.com/@PsyGbevimi';
-export const BOOK_ORDER_URL = 'http://livre.psygbevimi.com';
+export const BOOK_ORDER_URL = 'https://livre-vert.vercel.app';
 
 // Images locales (public/images)
 export const IMAGES = {
@@ -186,7 +186,7 @@ export const PROGRAM_DETAILS: ProgramDetail[] = [
   {
     slug: 'coaching-needs',
     eyebrow: 'Programme Coaching & développement personnel',
-    title: 'Programme Coaching & Développement Personnel',
+    title: 'Programme Coaching et Développement Personnel',
     intro:
       'Plan sur mesure pour soutenir vos progrès, votre développement personnel et votre cheminement vers une vie réussie et heureuse. Accompagnement structuré, ateliers de compétences, programmes de développement et suivi régulier pour vous aider à atteindre vos objectifs personnels.',
     target: 'Adultes cherchant à optimiser leur bonheur et épanouissement',

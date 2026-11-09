@@ -13,7 +13,7 @@ export const Book: React.FC = () => {
         <div className="max-w-[900px] mx-auto px-6 text-center">
           <h1
             id="book-heading"
-            className="font-bricolage font-bold text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.06] text-[#15173D]"
+            className="font-bricolage font-bold uppercase text-[clamp(2.4rem,6vw,4.6rem)] leading-[1.06] text-[#15173D]"
             style={{ fontWeight: 700 }}
           >
             {D.title}

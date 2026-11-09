@@ -20,8 +20,12 @@ export const Footer: React.FC = () => {
             </Link>
             <p className="max-w-[46ch] font-atkinson text-[15px] leading-relaxed text-[#C9C8E3]">{D.tagline}</p>
           </div>
-          <a href={D.youtubeUrl} target="_blank" rel="noopener noreferrer" className={`${linkCls} shrink-0 underline underline-offset-4`}>
-            {D.youtubeLabel}
+          <a href={D.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label={D.youtubeLabel} className={`${linkCls} shrink-0 inline-flex items-center gap-2`}>
+            <span className="underline underline-offset-4">Psy <strong>gbevimi</strong> sur</span>
+            <svg viewBox="0 0 28 20" className="h-6 w-auto" aria-hidden="true">
+              <rect width="28" height="20" rx="5" fill="#FF0000" />
+              <path d="M11 5.5v9l8-4.5z" fill="#fff" />
+            </svg>
           </a>
         </div>
 
