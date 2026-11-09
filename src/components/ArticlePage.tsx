@@ -6,6 +6,7 @@ import { Facebook, Link2, Linkedin, MessageCircle, Twitter } from 'lucide-react'
 import { ARTICLES, Article, formatArticleDate } from '../content';
 import { createWhatsAppUrl } from '../data';
 import { BTN } from './ui';
+import { ArticleMedia } from './ArticleMedia';
 
 const metaLine = (a: Article) =>
   `${formatArticleDate(a.createdAt)} · ${a.readingTime || '5'} min de lecture${
@@ -184,6 +185,7 @@ const CardHero: React.FC<{ article: Article }> = ({ article }) => {
             {article.category} · {metaLine(article)}
           </p>
         </div>
+        <ArticleMedia title={article.title} content={article.content} className={`mt-6 ${compact ? 'lg:mt-20' : 'px-6 lg:px-0'}`} />
       </div>
     </header>
   );
@@ -247,6 +249,7 @@ const PosterHero: React.FC<{ article: Article }> = ({ article }) => (
       referrerPolicy="no-referrer"
       className="mt-6 block h-auto w-full lg:max-w-[760px] lg:mx-auto rounded-[32px] lg:rounded-[40px] shadow-[0_30px_60px_-34px_rgba(21,23,61,0.5)]"
     />
+    <ArticleMedia title={article.title} content={article.content} center className="mt-6" />
   </header>
 );
 
@@ -271,15 +274,18 @@ const MergedHero: React.FC<{ article: Article }> = ({ article }) => (
       </Link>
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <motion.img
-          initial={{ opacity: 0, y: 24, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          src={article.imageUrl!}
-          alt=""
-          referrerPolicy="no-referrer"
-          className="lg:col-span-7 w-full h-auto rounded-[28px] ring-1 ring-white/20 shadow-[0_50px_90px_-30px_rgba(0,0,0,0.7)]"
-        />
+        <div className="lg:col-span-7">
+          <motion.img
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            src={article.imageUrl!}
+            alt=""
+            referrerPolicy="no-referrer"
+            className="w-full h-auto rounded-[28px] ring-1 ring-white/20 shadow-[0_50px_90px_-30px_rgba(0,0,0,0.7)]"
+          />
+          <ArticleMedia title={article.title} content={article.content} className="mt-6" />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -339,6 +345,7 @@ const LayoutCover: React.FC<{ article: Article; url: string }> = ({ article, url
             className="mt-10 mx-auto w-full max-w-[860px] h-auto rounded-[24px] bg-white border border-[#15173D]/10 shadow-[0_24px_50px_-30px_rgba(21,23,61,0.45)]"
           />
         )}
+        <ArticleMedia title={article.title} content={article.content} center className="mt-6" />
       </div>
     )}
     {/* Texte sur une carte blanche, puis bloc de fin rose */}
@@ -384,13 +391,16 @@ const LayoutSidebar: React.FC<{ article: Article; url: string }> = ({ article, u
             {article.title}
           </h1>
           {article.imageUrl && (
-            <div className="lg:col-span-7 bg-[#E9D5E4] rounded-[28px] p-4 sm:p-6">
-              <img
-                src={article.imageUrl}
-                alt=""
-                referrerPolicy="no-referrer"
-                className="w-full h-auto rounded-[18px]"
-              />
+            <div className="lg:col-span-7">
+              <div className="bg-[#E9D5E4] rounded-[28px] p-4 sm:p-6">
+                <img
+                  src={article.imageUrl}
+                  alt=""
+                  referrerPolicy="no-referrer"
+                  className="w-full h-auto rounded-[18px]"
+                />
+              </div>
+              <ArticleMedia title={article.title} content={article.content} className="mt-6" />
             </div>
           )}
         </div>
@@ -476,9 +486,10 @@ const LayoutFloat: React.FC<{ article: Article; url: string }> = ({ article, url
           src={article.imageUrl}
           alt=""
           referrerPolicy="no-referrer"
-          className="w-full h-auto mb-10 rounded-[24px] bg-white border border-[#15173D]/10 shadow-[0_24px_50px_-30px_rgba(21,23,61,0.45)]"
+          className="w-full h-auto rounded-[24px] bg-white border border-[#15173D]/10 shadow-[0_24px_50px_-30px_rgba(21,23,61,0.45)]"
         />
       )}
+      {!merged && <ArticleMedia title={article.title} content={article.content} className="mt-6 mb-10" />}
       {/* Texte à plat sur le fond, puis bloc de fin bleu nuit */}
       <Body article={article} className="article-body--open max-w-[760px] mx-auto" />
 
@@ -544,6 +555,7 @@ const LayoutPillars: React.FC<{ article: Article; url: string }> = ({ article, u
             className="mx-auto mt-12 block h-auto w-full max-w-[860px] rounded-[16px]"
           />
         )}
+        <ArticleMedia title={article.title} content={article.content} center className="mt-6" />
       </header>
 
       <div className="max-w-[960px] mx-auto px-6 lg:px-12 py-12 lg:py-16">
@@ -638,8 +650,11 @@ const LayoutAcrostic: React.FC<{ article: Article; url: string }> = ({ article, 
               {article.title}
             </h1>
             {article.imageUrl && (
-              <div className="lg:col-span-7 bg-[#E9D5E4] rounded-[28px] p-4 sm:p-6">
-                <img src={article.imageUrl} alt="" referrerPolicy="no-referrer" className="w-full h-auto rounded-[18px]" />
+              <div className="lg:col-span-7">
+                <div className="bg-[#E9D5E4] rounded-[28px] p-4 sm:p-6">
+                  <img src={article.imageUrl} alt="" referrerPolicy="no-referrer" className="w-full h-auto rounded-[18px]" />
+                </div>
+                <ArticleMedia title={article.title} content={article.content} className="mt-6" />
               </div>
             )}
           </div>
@@ -760,12 +775,15 @@ const LayoutLessons: React.FC<{ article: Article; url: string }> = ({ article, u
             <p className="mt-6 text-[15px] text-[#5A5D7E]">{metaLine(article)}</p>
           </div>
           {article.imageUrl && (
-            <img
-              src={article.imageUrl}
-              alt=""
-              referrerPolicy="no-referrer"
-              className="lg:col-span-7 block h-auto w-full rounded-[20px]"
-            />
+            <div className="lg:col-span-7">
+              <img
+                src={article.imageUrl}
+                alt=""
+                referrerPolicy="no-referrer"
+                className="block h-auto w-full rounded-[20px]"
+              />
+              <ArticleMedia title={article.title} content={article.content} className="mt-6" />
+            </div>
           )}
         </div>
       </div>
@@ -1053,6 +1071,7 @@ const LayoutSelf: React.FC<{ article: Article; url: string }> = ({ article, url 
       </header>
 
       <div className="mx-auto mt-28 max-w-[760px] px-6 lg:mt-60">
+        <ArticleMedia title={article.title} content={article.content} className="mb-12" />
         {/* Introduction : le premier paragraphe en grand, puis la phrase-clé, puis les pensées qui nous freinent */}
         <div className="flex flex-col gap-6">
           {introBlocks.map((b, i) =>
@@ -1127,6 +1146,9 @@ const LayoutAugust: React.FC<{ article: Article; url: string }> = ({ article, ur
           {article.imageUrl && (
             <img src={article.imageUrl} alt="" referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full object-cover object-[center_55%]" />
           )}
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#15173D]/70 to-transparent px-6 pb-6 pt-16 sm:px-10">
+            <ArticleMedia title={article.title} content={article.content} />
+          </div>
         </div>
 
         <div className="px-6 py-12 sm:px-10 lg:px-14 lg:py-20 xl:px-20">

@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Headphones, Pause, Play } from 'lucide-react';
 import { ARTICLES_DATA as D, ARTICLE_CATEGORIES } from '../data';
 import { ARTICLES, Article, formatArticleDate } from '../content';
 import { BTN } from './ui';
@@ -11,80 +10,6 @@ const meta = (a: Article) =>
   `${formatArticleDate(a.createdAt)} · ${a.readingTime || '5'} min${
     a.commentsCount > 0 ? ` · ${a.commentsCount} commentaire${a.commentsCount > 1 ? 's' : ''}` : ''
   }`;
-
-/** Vidéo YouTube ouverte par le bouton « Lire la vidéo » */
-const VIDEO_URL = 'https://youtu.be/4gbNNM2mX2I';
-
-/** Boutons du héro : lire la vidéo (YouTube) et lire l'audio (lecture vocale du titre et de l'introduction) */
-const HeroMedia: React.FC = () => {
-  const [state, setState] = useState<'idle' | 'playing' | 'paused'>('idle');
-  const supported = typeof window !== 'undefined' && 'speechSynthesis' in window;
-
-  useEffect(() => () => {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel();
-  }, []);
-
-  const toggleAudio = () => {
-    const synth = window.speechSynthesis;
-    if (state === 'playing') {
-      synth.pause();
-      setState('paused');
-    } else if (state === 'paused') {
-      synth.resume();
-      setState('playing');
-    } else {
-      synth.cancel();
-      const u = new SpeechSynthesisUtterance(`${D.title}. ${D.intro}`);
-      u.lang = 'fr-FR';
-      u.onend = () => setState('idle');
-      u.onerror = () => setState('idle');
-      synth.speak(u);
-      setState('playing');
-    }
-  };
-
-  return (
-    <div className="mt-9 flex flex-wrap items-center gap-4">
-      {/* Vidéo : un disque « play » qui pulse */}
-      <a
-        href={VIDEO_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group inline-flex items-center gap-4 pr-6 rounded-full bg-white hover:bg-[#E9D5E4] border border-[#15173D]/10 shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-[#D98268]"
-      >
-        <span className="relative grid place-items-center h-14 w-14 rounded-full bg-[#D98268] text-[#15173D]">
-          <Play size={22} fill="currentColor" className="relative ml-0.5" aria-hidden="true" />
-        </span>
-        <span className="font-bricolage font-semibold text-[16px] text-[#15173D]">Lire la vidéo</span>
-      </a>
-
-      {/* Audio : une pastille avec égaliseur animé pendant la lecture */}
-      {supported && (
-        <div className="inline-flex items-center gap-3">
-          <button
-            type="button"
-            onClick={toggleAudio}
-            className="inline-flex items-center gap-3 h-14 px-7 rounded-full bg-[#15173D] hover:bg-[#2A2D63] text-[#F3F1F8] font-bricolage font-semibold text-[16px] transition-colors focus-visible:outline-2 focus-visible:outline-[#D98268]"
-          >
-            {state === 'playing' ? "Pause l'audio" : state === 'paused' ? "Reprendre l'audio" : "Lire l'audio"}
-          </button>
-          {state !== 'idle' && (
-            <button
-              type="button"
-              onClick={() => {
-                window.speechSynthesis.cancel();
-                setState('idle');
-              }}
-              className="text-[14px] text-[#5A5D7E] hover:text-[#15173D] underline underline-offset-4"
-            >
-              Arrêter
-            </button>
-          )}
-        </div>
-      )}
-    </div>
-  );
-};
 
 /** Styles et animations du héro (coupées si l'utilisateur préfère moins de mouvement) */
 const HeroStyles: React.FC = () => (
@@ -149,9 +74,6 @@ export const Articles: React.FC = () => {
               <p className="art-rise mt-9 text-[1.15rem] leading-[1.75] text-[#15173D]/80 max-w-[52ch]" style={{ animationDelay: '.45s' }}>
                 {D.intro}
               </p>
-              <div className="art-rise" style={{ animationDelay: '.55s' }}>
-                <HeroMedia />
-              </div>
             </div>
 
           </div>
